@@ -1,0 +1,50 @@
+---
+title: "World-happiness-report-2024"
+output: html_notebook
+---
+
+### load the libraries
+```{r}
+library(ggplot2)
+library(shiny)
+```
+#import the dataset
+```{r}
+dataset= read.csv("~/World-happiness-report-2024.csv")
+dataset
+```
+
+```{r}
+head(dataset,150)
+```
+#view the structure of the dataset.
+```{r}
+str(dataset)
+```
+#summary of the dataset.
+```{r}
+summary(dataset)
+```
+identify missing values
+```{r}
+colSums(is.na(dataset))
+
+```
+data visualization
+```{r}
+ggplot(dataset,aes(x=Country.name,y= Healthy.life.expectancy))+
+  geom_point(color="green")
+```
+```{r}
+ggplot(dataset,aes(x=Country.name,y=  Freedom.to.make.life.choices))+
+  geom_point(color="blue")
+```
+
+
+
+
+
+
+
+
+
